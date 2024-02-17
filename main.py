@@ -31,8 +31,8 @@ with st.container():
     # Display the navigation menu using the option_menu widget
     selected = option_menu(
         menu_title=None,
-        options=['Home', 'progress', 'Summary', 'Quizzes', 'Contact'],
-        icons=['house', 'progress', 'book', 'code-slash', 'chat-left-text-fill'],
+        options=['Home',  'Summary', 'Quizzes','progress', 'Chatbot'],
+        icons=['house',  'book', 'code-slash', 'check','robot'],
         orientation='horizontal'
     )
 
@@ -43,8 +43,8 @@ pressed = False
 if selected == 'Home':
     with st.container():
         st.title("Home Page")
-        st.write("Paste your link here ")
-        link = textarea(default_value=" ", placeholder="Enter longer text", key="textarea1")
+        # add a text box for the user to input the youtube link
+        link = st.text_input("Enter the youtube link here", placeholder="Paste the link here")
 
         # add a button that will take the user to the summaries page
         if st.button("Get Summary"):
@@ -80,7 +80,8 @@ if selected == 'progress':
 
         # Display the styled DataFrame and a line chart
         st.dataframe(styled_df, width=800)
-        st.line_chart(df[['Correct', 'incorrect', 'Total']])
+        #add a barchart to show the progress of the user
+        st.bar_chart(df[["Correct", "incorrect", "Total"]])
 
 # Summaries page
 if selected == "Summary":
