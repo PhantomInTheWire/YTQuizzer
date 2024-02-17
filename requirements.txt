@@ -1,1 +1,4 @@
 streamlit
+googletrans==3.1.0a0
+openai
+langdetect
