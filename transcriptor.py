@@ -1,6 +1,7 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 from urllib.parse import urlparse, parse_qs
 
+
 def get_id(url):
     # Parse the URL
     parsed_url = urlparse(url)
@@ -25,5 +26,3 @@ def get_transcript(url):
     #            file.write(f'{temp}\n')
     transcript = " ".join([item["text"] for item in transcript])
     return transcript
-
-

@@ -1,10 +1,10 @@
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 from langchain.chains import LLMChain
-import transcriptor
+
 
 def get_quiz(transcript):
-    OPENAI_API_KEY = "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"
+    openai_api_key = "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"
 
     template = f""" You are a helpful assistant programmed to generate questions based on any text provided. For every 
     chunk of text you receive, you're tasked with designing 10 distinct questions. Each of these questions will be 
@@ -32,7 +32,7 @@ def get_quiz(transcript):
         [system_message_prompt, human_message_prompt]
     )
     chain = LLMChain(
-        llm=ChatOpenAI(openai_api_key=OPENAI_API_KEY),
+        llm=ChatOpenAI(openai_api_key=openai_api_key),
         prompt=chat_prompt,
     )
     return chain.run(transcript)
