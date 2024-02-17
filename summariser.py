@@ -5,7 +5,7 @@ import transcriptor
 
 
 def get_summary(transcript):
-    openai_api_key = "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"
+    openai_api_key = ""
 
     template = f""" You are a helpful assistant programmed to generate summary of lecture transcripts.
     Make sure it easy to understand and covers all important points. Also add some additional information to your

@@ -3,11 +3,13 @@ from langchain.prompts.chat import ChatPromptTemplate, SystemMessagePromptTempla
 from langchain.chains import LLMChain
 import ast
 
+
 def string_to_list(s):
     return ast.literal_eval(s)
 
+
 def get_quiz(transcript):
-    openai_api_key = "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"
+    openai_api_key = ""
 
     template = f""" You are a helpful assistant programmed to generate questions based on any text provided. For every 
     chunk of text you receive, you're tasked with designing 10 distinct questions. Each of these questions will be 
