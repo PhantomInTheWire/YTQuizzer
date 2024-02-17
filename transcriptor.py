@@ -1,14 +1,5 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 from urllib.parse import urlparse, parse_qs
-from langdetect import detect
-from googletrans import Translator
-
-
-def translate_text(text):
-    translator = Translator()  # Specify source language as Hindi
-    out = translator.translate(text, dest='en')  # Use the translator object
-    return out.text  # Return only the translated text
-
 
 def get_id(url):
     # Parse the URL
@@ -23,15 +14,16 @@ def get_id(url):
 def get_transcript(url):
     v_id = get_id(url)
     transcript = YouTubeTranscriptApi.get_transcript(v_id, languages=["hi", "en"])
-    s = ''
-    a = ''
-    for entry in transcript:
-        if detect(entry['text']) == "hi":
-            s += str(entry['text'])
-            if len(s) > 1500:
-                a += translate_text(s)
-                s = ''
-    return a
+    #    s = ''
+    #    for entry in transcript:
+    #       if detect(entry['text']) == "hi":
+    #    s += str(entry['text'])
+    #    if len(s) > 1500:
+    #        temp = translate_text(s)
+    #        s = ('')
+    #        with open('translation files/transcript.txt', 'a', encoding='utf-8') as file:
+    #            file.write(f'{temp}\n')
+    transcript = " ".join([item["text"] for item in transcript])
+    return transcript
 
 
-get_transcript("https://www.youtube.com/watch?v=I5srDu75h_M&list=PLfqMhTWNBTe3LtFWcvwpqTkUSlB32kJop&index=3")
