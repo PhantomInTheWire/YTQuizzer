@@ -1,6 +1,5 @@
 import json
-import prompt
-import transcriptor
+
 
 def lists_of_lists_to_json(data, filename):
     questions_data = []
@@ -18,4 +17,3 @@ def lists_of_lists_to_json(data, filename):
 
     with open(filename, "w") as json_file:
         json.dump(questions_data, json_file, indent=4)
-print(lists_of_lists_to_json(prompt.get_quiz(transcriptor.get_transcript("https://www.youtube.com/watch?v=b4DPj0XAfSg")), "quiz.json"))
