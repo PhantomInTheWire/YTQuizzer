@@ -4,7 +4,7 @@ from langchain.chains import LLMChain
 import transcriptor
 
 def get_summary(transcript):
-    openai_api_key = "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"
+    openai_api_key = "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"
 
     template = f""" You are a helpful assistant programmed to generate summary of lecture transcripts.
     Make sure it easy to understand and covers all important points. Also add some additional information to your
@@ -23,3 +23,5 @@ def get_summary(transcript):
         prompt=chat_prompt,
     )
     return chain.run(transcript)
+
+print(get_summary(transcriptor.get_transcript("https://www.youtube.com/watch?v=ihcE3aLoAEo")))

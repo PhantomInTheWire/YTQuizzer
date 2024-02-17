@@ -7,7 +7,7 @@ def string_to_list(s):
     return ast.literal_eval(s)
 
 def get_quiz(transcript):
-    openai_api_key = "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"
+    openai_api_key = "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"
 
     template = f""" You are a helpful assistant programmed to generate questions based on any text provided. For every 
     chunk of text you receive, you're tasked with designing 10 distinct questions. Each of these questions will be 
