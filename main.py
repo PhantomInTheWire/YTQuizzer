@@ -45,9 +45,10 @@ if selected == 'Home':
 
         # add a button that will take the user to the sumaaries page
         if st.button("Get Summary"):
+            with st.spinner("Brewing your Summary and Quiz!"):
+                summariser.get_summary(transcriptor.get_transcript(link))
+                pressed = True
             st.write("please go to the summary and quiz page to view the generated summary and quiz respectively.")
-            summariser.get_summary(transcriptor.get_transcript(link))
-            pressed = True
 
 # Progress tracker page
 if selected == 'progress':
