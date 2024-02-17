@@ -10,7 +10,8 @@ def get_summary(transcript):
     template = f""" You are a helpful assistant programmed to generate summary of lecture transcripts.
     Make sure it easy to understand and covers all important points. Also add some additional information to your
     output if you think it will be hard to follow for a beginner.
-    If you can write most of the information in bullet points and codeblocks.
+    Make sure you right most of the information in bullet points and codeblocks.
+    The parts in bullet points and regular text shouldn't exceed 250 words
     Output it in text format.
     Make sure that your output is in english even if prompted in hindi or any other language
     You must adhere to this format as it's optimized for further Python processing.
