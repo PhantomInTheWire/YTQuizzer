@@ -4,7 +4,6 @@ import random
 import pandas as pd
 import streamlit as st
 from streamlit_option_menu import option_menu
-from streamlit_shadcn_ui import textarea
 
 import jsonification
 import prompt
@@ -31,8 +30,8 @@ with st.container():
     # Display the navigation menu using the option_menu widget
     selected = option_menu(
         menu_title=None,
-        options=['Home',  'Summary', 'Quizzes','progress', 'Chatbot'],
-        icons=['house',  'book', 'code-slash', 'check','robot'],
+        options=['Home', 'Summary', 'Quizzes', 'progress', 'Chatbot'],
+        icons=['house', 'book', 'code-slash', 'check', 'robot'],
         orientation='horizontal'
     )
 
@@ -80,7 +79,7 @@ if selected == 'progress':
 
         # Display the styled DataFrame and a line chart
         st.dataframe(styled_df, width=800)
-        #add a barchart to show the progress of the user
+        # add a barchart to show the progress of the user
         st.bar_chart(df[["Correct", "incorrect", "Total"]])
 
 # Summaries page
@@ -157,5 +156,3 @@ if selected == "Quizzes":
         # Display the score
         score = correct_answers
         st.write(f"Your final score is: {score}/{len(questions)}")
-
-
