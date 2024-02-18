@@ -1,7 +1,7 @@
 import json
 import random
 
-import pandas as pd
+from openai import OpenAI
 import streamlit as st
 from streamlit_option_menu import option_menu
 
@@ -30,8 +30,8 @@ with st.container():
     # Display the navigation menu using the option_menu widget
     selected = option_menu(
         menu_title=None,
-        options=['Home', 'Summary', 'Quizzes', 'progress', 'Chatbot'],
-        icons=['house', 'book', 'code-slash', 'check', 'robot'],
+        options=['Home', 'Summary', 'Quizzes', 'Chatbot'],
+        icons=['house', 'book', 'code-slash', 'robot'],
         orientation='horizontal'
     )
 
@@ -42,7 +42,7 @@ pressed = False
 if selected == 'Home':
     with st.container():
         st.title("Home Page")
-        # add a text box for the user to input the youtube link
+        # add a text box for the user to input the YouTube link
         link = st.text_input("Enter the youtube link here", placeholder="Paste the link here")
 
         # add a button that will take the user to the summaries page
@@ -55,32 +55,6 @@ if selected == 'Home':
                 jsonification.lists_of_lists_to_json(prompt.get_quiz(t), 'quiz.json')
                 pressed = True
             st.write("please go to the summary and quiz page to view the generated summary and quiz respectively.")
-
-# Progress tracker page
-if selected == 'progress':
-    with st.container():
-        st.header("📈 Progress Tracker")
-        st.markdown("*")
-
-        # Sample data for progress tracker
-        data = [
-            {"Username": "INV001", "Youtube link": "xxxx", "Correct": 5, "incorrect": 10, "Total": 15},
-            {"Username": "INV002", "Youtube link": "xxxx", "Correct": 7, "incorrect": 8, "Total": 20},
-            {"Username": "INV003", "Youtube link": "xxxx", "Correct": 3, "incorrect": 12, "Total": 15},
-            {"Username": "INV004", "Youtube link": "xxxx", "Correct": 5, "incorrect": 10, "Total": 10},
-            {"Username": "INV005", "Youtube link": "xxxx", "Correct": 13, "incorrect": 2, "Total": 15},
-        ]
-
-        # Create a DataFrame from the data
-        df = pd.DataFrame(data)
-
-        # Apply the highlight_max function to style the DataFrame
-        styled_df = df.style.apply(highlight_max, subset=["Correct", "incorrect", "Total"])
-
-        # Display the styled DataFrame and a line chart
-        st.dataframe(styled_df, width=800)
-        # add a barchart to show the progress of the user
-        st.bar_chart(df[["Correct", "incorrect", "Total"]])
 
 # Summaries page
 if selected == "Summary":
@@ -156,3 +130,33 @@ if selected == "Quizzes":
         # Display the score
         score = correct_answers
         st.write(f"Your final score is: {score}/{len(questions)}")
+
+if selected == "Chatbot":
+    client = OpenAI(api_key="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")
+
+    if "openai_model" not in st.session_state:
+        st.session_state["openai_model"] = "gpt-3.5-turbo"
+
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+
+    if prompt := st.chat_input("What is up?"):
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+
+        with st.chat_message("assistant"):
+            stream = client.chat.completions.create(
+                model=st.session_state["openai_model"],
+                messages=[
+                    {"role": m["role"], "content": m["content"]}
+                    for m in st.session_state.messages
+                ],
+                stream=True,
+            )
+            response = st.write_stream(stream)
+        st.session_state.messages.append({"role": "assistant", "content": response})
