@@ -134,8 +134,8 @@ if selected == "Quizzes":
 if selected == "Chatbot":
     client = OpenAI(api_key="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")
 
-    if "openai_model" not in st.session_state:
-        st.session_state["openai_model"] = "gpt-3.5-turbo"
+    if "model" not in st.session_state:
+        st.session_state["model"] = "gpt-3.5-turbo"
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
@@ -151,7 +151,7 @@ if selected == "Chatbot":
 
         with st.chat_message("assistant"):
             stream = client.chat.completions.create(
-                model=st.session_state["openai_model"],
+                model=st.session_state["model"],
                 messages=[
                     {"role": m["role"], "content": m["content"]}
                     for m in st.session_state.messages

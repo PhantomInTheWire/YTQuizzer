@@ -1,0 +1,62 @@
+[
+    {
+        "question": "What is Cursor according to the video?",
+        "answer": "An IDE built for programming and collaboration with powerful AI",
+        "wrong_answer1": "A cooking appliance",
+        "wrong_answer2": "A type of vehicle"
+    },
+    {
+        "question": "How much does the Cursor Pro version cost?",
+        "answer": "$20",
+        "wrong_answer1": "$50",
+        "wrong_answer2": "$10"
+    },
+    {
+        "question": "What does the video mention about Cursor's learning page?",
+        "answer": "It is supremely impressive",
+        "wrong_answer1": "It is outdated",
+        "wrong_answer2": "It is under construction"
+    },
+    {
+        "question": "What are the supported operating systems for Cursor?",
+        "answer": "Windows, Mac, Linux",
+        "wrong_answer1": "Windows only",
+        "wrong_answer2": "Linux only"
+    },
+    {
+        "question": "What is the tagline that Cursor uses to describe itself?",
+        "answer": "AI first code editor",
+        "wrong_answer1": "Traditional code editor",
+        "wrong_answer2": "Basic code editor"
+    },
+    {
+        "question": "What feature allows users to generate code by providing prompts?",
+        "answer": "Command K",
+        "wrong_answer1": "Command Z",
+        "wrong_answer2": "Command D"
+    },
+    {
+        "question": "What is Copilot Plus+ in Cursor?",
+        "answer": "A more powerful version of Copilot",
+        "wrong_answer1": "A video editing tool",
+        "wrong_answer2": "A social media platform"
+    },
+    {
+        "question": "What can users do with Cursor's chat feature?",
+        "answer": "Chat with their code",
+        "wrong_answer1": "Chat with friends",
+        "wrong_answer2": "Chat with celebrities"
+    },
+    {
+        "question": "What is the auto debug feature in Cursor?",
+        "answer": "A feature for debugging code automatically",
+        "wrong_answer1": "A feature for improving typing speed",
+        "wrong_answer2": "A feature for changing code colors"
+    },
+    {
+        "question": "How does Cursor help users understand code?",
+        "answer": "By explaining the code and suggesting improvements",
+        "wrong_answer1": "By highlighting errors only",
+        "wrong_answer2": "By providing random code snippets"
+    }
+]
