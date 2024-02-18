@@ -1,62 +1,62 @@
 [
     {
-        "question": "What is the name of the VR AR headset released by Apple that Zuck criticized in his video?",
-        "answer": "Apple Vision Pro",
-        "wrong_answer1": "Meta Reality",
-        "wrong_answer2": "Quest 3"
+        "question": "What is Cursor described as?",
+        "answer": "IDE built for programming and collaboration with powerful AI",
+        "wrong_answer1": "Video editing software",
+        "wrong_answer2": "Photo editing software"
     },
     {
-        "question": "Where did Mark Zuckerberg record the video criticizing the Apple Vision Pro?",
-        "answer": "On his couch",
-        "wrong_answer1": "In his Hawaii doomsday bunker",
-        "wrong_answer2": "At his Lake Tahoe Mansion"
+        "question": "Is Cursor free to use?",
+        "answer": "Cursor has a free version available",
+        "wrong_answer1": "Cursor is only available for a fee",
+        "wrong_answer2": "Cursor is a hardware device"
     },
     {
-        "question": "What did Mark Zuckerberg say was surprisingly bad about the pass through clarity of the Apple Vision Pro?",
-        "answer": "It sucks",
-        "wrong_answer1": "It's excellent",
-        "wrong_answer2": "It's decent"
+        "question": "What is the cost of the Cursor Pro version?",
+        "answer": "$20",
+        "wrong_answer1": "$50",
+        "wrong_answer2": "$100"
     },
     {
-        "question": "According to Zuck, what is the most powerful use case of the Apple Vision Pro?",
-        "answer": "Turning an ugly girlfriend into a hot girlfriend",
-        "wrong_answer1": "Using it as an ad blocker in real life",
-        "wrong_answer2": "Showing off tech savviness"
+        "question": "What feature does command K provide in Cursor?",
+        "answer": "Generates code based on provided prompt",
+        "wrong_answer1": "Deletes code",
+        "wrong_answer2": "Changes font size"
     },
     {
-        "question": "What did Mark Zuckerberg claim is a feature that alone makes the Apple Vision Pro worth $3,500?",
-        "answer": "Turning an ugly girlfriend into a hot girlfriend",
-        "wrong_answer1": "Being a great VR headset",
-        "wrong_answer2": "Having a superior bank account"
+        "question": "What is Copilot Plus+ in Cursor?",
+        "answer": "Native autocomplete feature",
+        "wrong_answer1": "Manual coding feature",
+        "wrong_answer2": "Debugging tool"
     },
     {
-        "question": "Which VR headset did Mark Zuckerberg claim is the better product overall compared to the Apple Vision Pro?",
-        "answer": "Quest 3",
-        "wrong_answer1": "Meta Reality",
-        "wrong_answer2": "Apple Vision Pro"
+        "question": "What is the purpose of providing a sample AIC specific line of code in Cursor?",
+        "answer": "Chat with code and provide specific code snippets",
+        "wrong_answer1": "Change color schemes",
+        "wrong_answer2": "Play music"
     },
     {
-        "question": "What technology did Mark Zuckerberg mention that he can't wait for, involving inserting images into dreams?",
-        "answer": "Neural interface",
-        "wrong_answer1": "VR headsets",
-        "wrong_answer2": "Brain chips"
+        "question": "What is mentioned as one of the features in Cursor?",
+        "answer": "Auto debug and fix",
+        "wrong_answer1": "Video playback",
+        "wrong_answer2": "Social media integration"
     },
     {
-        "question": "In the video, who does Mark Zuckerberg mention agrees with his review of the Apple Vision Pro?",
-        "answer": "Mark Zuckerberg",
-        "wrong_answer1": "Steve Jobs",
-        "wrong_answer2": "Elon Musk"
+        "question": "How does Cursor handle the process of generating code based on a prompt?",
+        "answer": "By using AI power coder",
+        "wrong_answer1": "By manual coding",
+        "wrong_answer2": "By copying code from other sources"
     },
     {
-        "question": "According to Mark Zuckerberg, which company is fighting for VR dominance with Apple?",
-        "answer": "Meta",
-        "wrong_answer1": "Microsoft",
-        "wrong_answer2": "Amazon"
+        "question": "What is the key combination to open an input field in Cursor?",
+        "answer": "Control or command and hit l",
+        "wrong_answer1": "Control and hit p",
+        "wrong_answer2": "Control and hit s"
     },
     {
-        "question": "What did Mark Zuckerberg express his bullishness towards in terms of future technology?",
-        "answer": "Brain chips",
-        "wrong_answer1": "VR headsets",
-        "wrong_answer2": "Smartphones"
+        "question": "How does Cursor assist in understanding code errors?",
+        "answer": "Explains the code and suggests corrections",
+        "wrong_answer1": "Deletes the code",
+        "wrong_answer2": "Ignores the errors and proceeds"
     }
 ]

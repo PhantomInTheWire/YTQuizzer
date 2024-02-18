@@ -103,7 +103,6 @@ if selected == "Summary":
         with open("sum.txt", "w") as f:
             f.write("")
         st.write("")
-
 # Quizzes page
 if selected == "Quizzes":
     with st.container():
@@ -128,11 +127,11 @@ if selected == "Quizzes":
                 st.session_state.shuffled_options[i] = options
 
         # Display each question and get user input
-        for i, question in enumerate(questions, 1):
+        for i, question in enumerate(questions, 1):  # Start index at 1 for display
             st.subheader(f"Question {i}: {question['question']}")
 
             # Get previously selected answer (if any)
-            selected_option = st.session_state.quiz_answers.get(i - 1, None)
+            selected_option = st.session_state.quiz_answers.get(i - 1, None)  # Use i-1 to match dictionary index
 
             # Use the stored shuffled options
             options = st.session_state.shuffled_options[i - 1]
@@ -147,8 +146,9 @@ if selected == "Quizzes":
             # Always render the radio button widget and set the state unconditionally
             selected_option = st.radio("Choose an option", options, key=f"question_{i}", index=selected_index)
             # Update answers dictionary
-            st.session_state.quiz_answers[i - 1] = selected_option
+            st.session_state.quiz_answers[i - 1] = selected_option  # Use i-1 to match dictionary index
 
+        # Calculate score correctly using i-1 to match dictionary index
         for i, question in enumerate(questions, 1):
             if st.session_state.quiz_answers.get(i - 1) == question['answer']:
                 correct_answers += 1
