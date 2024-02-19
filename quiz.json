@@ -1,62 +1,62 @@
 [
     {
-        "question": "What is Cursor according to the video?",
-        "answer": "An IDE built for programming and collaboration with powerful AI",
-        "wrong_answer1": "A cooking appliance",
-        "wrong_answer2": "A type of vehicle"
+        "question": "When was Pinterest first launched?",
+        "answer": "March 2010",
+        "wrong_answer1": "April 2010",
+        "wrong_answer2": "February 2010"
     },
     {
-        "question": "How much does the Cursor Pro version cost?",
-        "answer": "$20",
-        "wrong_answer1": "$50",
-        "wrong_answer2": "$10"
+        "question": "How many founders did Pinterest start with?",
+        "answer": "2",
+        "wrong_answer1": "3",
+        "wrong_answer2": "1"
     },
     {
-        "question": "What does the video mention about Cursor's learning page?",
-        "answer": "It is supremely impressive",
-        "wrong_answer1": "It is outdated",
-        "wrong_answer2": "It is under construction"
+        "question": "What was Pinterest's initial tech stack?",
+        "answer": "1 small web engine and 1 small MySQL database",
+        "wrong_answer1": "5 web engines and 2 MySQL databases",
+        "wrong_answer2": "2 large web engines and 3 MySQL databases"
     },
     {
-        "question": "What are the supported operating systems for Cursor?",
-        "answer": "Windows, Mac, Linux",
-        "wrong_answer1": "Windows only",
-        "wrong_answer2": "Linux only"
+        "question": "What technology did Pinterest move to in January 2011?",
+        "answer": "AWS",
+        "wrong_answer1": "Azure",
+        "wrong_answer2": "Google Cloud"
     },
     {
-        "question": "What is the tagline that Cursor uses to describe itself?",
-        "answer": "AI first code editor",
-        "wrong_answer1": "Traditional code editor",
-        "wrong_answer2": "Basic code editor"
+        "question": "What was the reason for Pinterest's explosive growth in Sept 2011?",
+        "answer": "Users doubling every month and a half",
+        "wrong_answer1": "Decrease in user engagement",
+        "wrong_answer2": "New feature introduction"
     },
     {
-        "question": "What feature allows users to generate code by providing prompts?",
-        "answer": "Command K",
-        "wrong_answer1": "Command Z",
-        "wrong_answer2": "Command D"
+        "question": "Why did Pinterest decide to drop Cassandra, Membase, and Mongo from their tech stack?",
+        "answer": "To only stick with MySQL and go with sharding",
+        "wrong_answer1": "To switch to a completely new tech stack",
+        "wrong_answer2": "To add more databases"
     },
     {
-        "question": "What is Copilot Plus+ in Cursor?",
-        "answer": "A more powerful version of Copilot",
-        "wrong_answer1": "A video editing tool",
-        "wrong_answer2": "A social media platform"
+        "question": "What is database clustering?",
+        "answer": "Distributing data across multiple servers to act as a single system",
+        "wrong_answer1": "Creating duplicate databases",
+        "wrong_answer2": "Deleting data from servers"
     },
     {
-        "question": "What can users do with Cursor's chat feature?",
-        "answer": "Chat with their code",
-        "wrong_answer1": "Chat with friends",
-        "wrong_answer2": "Chat with celebrities"
+        "question": "What is sharding in database management?",
+        "answer": "Partitioning a large database into smaller pieces called shards",
+        "wrong_answer1": "Combining databases into a single unit",
+        "wrong_answer2": "Adding more servers to the database"
     },
     {
-        "question": "What is the auto debug feature in Cursor?",
-        "answer": "A feature for debugging code automatically",
-        "wrong_answer1": "A feature for improving typing speed",
-        "wrong_answer2": "A feature for changing code colors"
+        "question": "How did Pinterest handle replication lag in their database?",
+        "answer": "By storing recently updated data in a cache",
+        "wrong_answer1": "By ignoring the lag",
+        "wrong_answer2": "By deleting the replicas"
     },
     {
-        "question": "How does Cursor help users understand code?",
-        "answer": "By explaining the code and suggesting improvements",
-        "wrong_answer1": "By highlighting errors only",
-        "wrong_answer2": "By providing random code snippets"
+        "question": "What was the goal of sharding for Pinterest?",
+        "answer": "Minimize the number of queries and database accesses needed",
+        "wrong_answer1": "Increase the complexity of the database",
+        "wrong_answer2": "Reduce the number of shards used"
     }
 ]

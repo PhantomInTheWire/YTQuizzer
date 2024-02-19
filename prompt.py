@@ -9,7 +9,7 @@ def string_to_list(s):
 
 
 def get_quiz(transcript):
-    openai_api_key = "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"
+    openai_api_key = ""
 
     template = f""" You are a helpful assistant programmed to generate questions based on any text provided. For every 
     chunk of text you receive, you're tasked with designing 10 distinct questions. Each of these questions will be 
@@ -37,7 +37,7 @@ def get_quiz(transcript):
         [system_message_prompt, human_message_prompt]
     )
     chain = LLMChain(
-        llm=ChatOpenAI(openai_api_key=openai_api_key),
+        llm=ChatOpenAI(openai_api_key= OPENAI_API_KEY),
         prompt=chat_prompt,
     )
     return string_to_list(chain.run(transcript))

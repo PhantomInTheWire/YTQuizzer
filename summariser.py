@@ -5,7 +5,7 @@ import transcriptor
 
 
 def get_summary(transcript):
-    openai_api_key = "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"
+    openai_api_key = ""
 
     template = f""" You are a helpful assistant programmed to generate summary of lecture transcripts.
     Make sure it easy to understand and covers all important points. Also add some additional information to your
@@ -22,7 +22,7 @@ def get_summary(transcript):
         [system_message_prompt, human_message_prompt]
     )
     chain = LLMChain(
-        llm=ChatOpenAI(openai_api_key=openai_api_key),
+        llm=ChatOpenAI(openai_api_key= OPENAI_API_KEY),
         prompt=chat_prompt,
     )
     ans = chain.run(transcript)

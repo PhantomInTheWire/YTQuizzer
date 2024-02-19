@@ -8,9 +8,8 @@ def get_id(url):
     # Extract the query parameters
     query_params = parse_qs(parsed_url.query)
     # Extract the video ID from the query parameters
-    video_id = query_params["v"][0]
+    video_id = query_params.get('v', [None])[0]
     return video_id
-
 
 def get_transcript(url):
     v_id = get_id(url)

@@ -132,7 +132,7 @@ if selected == "Quizzes":
         st.write(f"Your final score is: {score}/{len(questions)}")
 
 if selected == "Chatbot":
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key="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")
 
     if "model" not in st.session_state:
         st.session_state["model"] = "gpt-3.5-turbo"
