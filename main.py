@@ -10,7 +10,7 @@ import prompt
 import summariser
 import transcriptor
 
-
+openai_api_key=""
 # Function to highlight maximum values in a DataFrame
 def highlight_max(s):
     is_max = s == s.max()
