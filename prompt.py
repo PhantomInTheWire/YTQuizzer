@@ -37,7 +37,7 @@ def get_quiz(transcript):
         [system_message_prompt, human_message_prompt]
     )
     chain = LLMChain(
-        llm=ChatOpenAI(openai_api_key= OPENAI_API_KEY),
+        llm=ChatOpenAI(openai_api_key= openai_api_key),
         prompt=chat_prompt,
     )
     return string_to_list(chain.run(transcript))
