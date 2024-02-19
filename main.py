@@ -10,8 +10,12 @@ import prompt
 import summariser
 import transcriptor
 
-openai_api_key=""
 # Function to highlight maximum values in a DataFrame
+
+import os
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+
 def highlight_max(s):
     is_max = s == s.max()
     return ['background-color: #C91A46' if v else '' for v in is_max]
@@ -133,7 +137,7 @@ if selected == "Quizzes":
 
 if selected == "Chatbot":
     client = OpenAI(api_key=openai_api_key)
-
+    st.write(openai_api_key, "is it?")
     if "model" not in st.session_state:
         st.session_state["model"] = "gpt-3.5-turbo"
 
