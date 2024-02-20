@@ -18,7 +18,8 @@ def get_summary(transcript):
 
     To ensure clarity and organization, please structure the majority of the information
     in bullet points and code blocks. However, please note that the total length of the
-    content in bullet points and regular text should not exceed 300 words.
+    content in bullet points and regular text should not exceed 300 words. Do not include
+    the size of the code block in the 300 words the code block can be of any length.
     
     Please generate the output in English, regardless of the language used in the
     original prompt. It is important to adhere to this format as it is optimized for
