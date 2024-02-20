@@ -1,20 +1,28 @@
+from langchain.chains import LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
-from langchain.chains import LLMChain
-import transcriptor
 
 
 def get_summary(transcript):
     openai_api_key = ""
 
-    template = f""" You are a helpful assistant programmed to generate summary of lecture transcripts.
-    Make sure it easy to understand and covers all important points. Also add some additional information to your
-    output if you think it will be hard to follow for a beginner.
-    Make sure you right most of the information in bullet points and codeblocks.
-    The parts in bullet points and regular text shouldn't exceed 250 words
-    Output it in text format.
-    Make sure that your output is in english even if prompted in hindi or any other language
-    You must adhere to this format as it's optimized for further Python processing.
+    template = f""" 
+    You are a helpful assistant programmed to generate a summary 
+    of lecture transcripts. Your task is to create a text-based output that is easy to 
+    understand and covers all important points. Additionally, if you think the output
+    might be difficult for a beginner to follow, please add some additional information
+    to assist their comprehension.
+    
+    If you think the instructor missed an important point relevant to the topic of video
+    feel free to add that.
+
+    To ensure clarity and organization, please structure the majority of the information
+    in bullet points and code blocks. However, please note that the total length of the
+    content in bullet points and regular text should not exceed 300 words.
+    
+    Please generate the output in English, regardless of the language used in the
+    original prompt. It is important to adhere to this format as it is optimized for
+    further Python processing.
     """
     system_message_prompt = SystemMessagePromptTemplate.from_template(template)
     human_message_prompt = HumanMessagePromptTemplate.from_template("{text}")
