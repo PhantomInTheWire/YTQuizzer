@@ -10,7 +10,7 @@ def string_to_list(s):
 
 def get_quiz(transcript):
 
-    genai.configure(api_key=os.environ("GOOGLE_API_KEY"))
+    genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
     template = f""" You are a helpful assistant programmed to generate questions based on any text provided. For every 
     chunk of text you receive, you're tasked with designing 10 distinct questions. Each of these questions will be 
