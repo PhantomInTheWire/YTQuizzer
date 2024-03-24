@@ -1,7 +1,7 @@
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts.chat import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
-from langchain.chains import LLMChain
 import ast
+import google.generativeai as genai
+import os
+import transcriptor
 
 
 def string_to_list(s):
@@ -9,7 +9,8 @@ def string_to_list(s):
 
 
 def get_quiz(transcript):
-    openai_api_key = ""
+
+    genai.configure(api_key=os.environ("GOOGLE_API_KEY"))
 
     template = f""" You are a helpful assistant programmed to generate questions based on any text provided. For every 
     chunk of text you receive, you're tasked with designing 10 distinct questions. Each of these questions will be 
@@ -31,13 +32,6 @@ def get_quiz(transcript):
     Make sure that your output is in english even if prompted in hindi or any other language
     You must adhere to this format as it's optimized for further Python processing.
     """
-    system_message_prompt = SystemMessagePromptTemplate.from_template(template)
-    human_message_prompt = HumanMessagePromptTemplate.from_template("{text}")
-    chat_prompt = ChatPromptTemplate.from_messages(
-        [system_message_prompt, human_message_prompt]
-    )
-    chain = LLMChain(
-        llm=ChatOpenAI(openai_api_key= openai_api_key),
-        prompt=chat_prompt,
-    )
-    return string_to_list(chain.run(transcript))
+    model = genai.GenerativeModel("gemini-pro")
+    ans = (model.generate_content(template + transcript)).text
+    return ans

@@ -1,7 +1,6 @@
 streamlit
-openai
-langchain
 streamlit_option_menu
 pandas
 streamlit_shadcn_ui
 youtube_transcript_api
+google-generativeai

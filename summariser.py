@@ -1,10 +1,9 @@
-from langchain.chains import LLMChain
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts.chat import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
+import google.generativeai as genai
+import os
 
 
 def get_summary(transcript):
-    openai_api_key = ""
+    genai.configure(api_key=os.environ("GOOGLE_API_KEY"))
 
     template = f""" 
     You are a helpful assistant programmed to generate a summary 
@@ -25,15 +24,7 @@ def get_summary(transcript):
     original prompt. It is important to adhere to this format as it is optimized for
     further Python processing.
     """
-    system_message_prompt = SystemMessagePromptTemplate.from_template(template)
-    human_message_prompt = HumanMessagePromptTemplate.from_template("{text}")
-    chat_prompt = ChatPromptTemplate.from_messages(
-        [system_message_prompt, human_message_prompt]
-    )
-    chain = LLMChain(
-        llm=ChatOpenAI(openai_api_key=openai_api_key),
-        prompt=chat_prompt,
-    )
-    ans = chain.run(transcript)
+    model = genai.GenerativeModel("gemini-pro")
+    ans = (model.generate_content(template+transcript)).text
     with open("sum.txt", "a") as f:
         f.write(ans)
