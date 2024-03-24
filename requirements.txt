@@ -4,3 +4,4 @@ pandas
 streamlit_shadcn_ui
 youtube_transcript_api
 google-generativeai
+openai
